@@ -7,14 +7,14 @@ package com.ifancc.wifimgr.Bean;
 public class WlanInterfaceInfo {
     public  String GUID;
     public String  InterfaceInfo;
-    public WlanInterfaceState state;
+    public WlanInterfaceState State;
     static {
         System.loadLibrary("Debug/wifimgr");
     }
     public WlanInterfaceInfo(String GUID, String interfaceInfo, WlanInterfaceState state) {
         this.GUID = GUID;
         InterfaceInfo = interfaceInfo;
-        this.state = state;
+        this.State = state;
     }
-    public native WlanInterfaceInfo[] getWlanInterface();
+    public native static  WlanInterfaceInfo getWlanInterfaceInfo();
 }

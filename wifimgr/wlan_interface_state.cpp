@@ -36,3 +36,4 @@ JNIEXPORT jobject JNICALL Java_com_ifancc_wifimgr_Bean_WlanInterfaceState_getWla
 	assert(obj != NULL);
 	return obj;
 }
+

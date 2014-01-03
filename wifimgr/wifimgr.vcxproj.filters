@@ -36,6 +36,15 @@
     <ClInclude Include="com_ifancc_wifimgr_Bean_WlanInterfaceState.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="wlan_interface_info.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="com_ifancc_wifimgr_Bean_WlanInterfaceInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ulits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +63,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="wlan_interface_state.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wlan_interface_info.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ulits.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

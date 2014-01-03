@@ -16,13 +16,13 @@ public:
 
 	static jfieldID wlan_interface_state_not_ready;
 	static jfieldID wlan_interface_state_connected;
-	static jfieldID wlan_interface_state_ad_hoc_network_formed;	
-	static jfieldID wlan_interface_state_disconnecting;		
-	static jfieldID wlan_interface_state_disconnected;		
-	static jfieldID wlan_interface_state_associating;		
-	static jfieldID wlan_interface_state_discovering;		
+	static jfieldID wlan_interface_state_ad_hoc_network_formed;
+	static jfieldID wlan_interface_state_disconnecting;
+	static jfieldID wlan_interface_state_disconnected;
+	static jfieldID wlan_interface_state_associating;
+	static jfieldID wlan_interface_state_discovering;
 	static jfieldID wlan_interface_state_authenticating;
-		
+
 
 	// Method IDs:
 	static jmethodID ordinal_ID;
