@@ -1,6 +1,7 @@
 package com.ifancc.wifimgr.Bean;
 
 /**
+ * @author bowman
  * Created by bowman on 14-1-3.
  */
 public  enum WlanInterfaceState {

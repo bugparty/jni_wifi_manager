@@ -1,6 +1,13 @@
+@echo off
+set GEN_PATH=../wifimgr
+set BASE_PATH=com/ifancc/wifimgr
+set BEAN=%BASE_PATH%/Bean
 
-javac com/ifancc/wifimgr/Manager.java com/ifancc/wifimgr/Bean/Wifi.java
+set C_FILES= %BASE_PATH%/Manager.java %BEAN%/Wifi.java %BEAN%/WlanInterfaceInfo.java
+
+@echo on
 
 
-javah -d ../wifimgr com.ifancc.wifimgr.Manager com.ifancc.wifimgr.Bean.Wifi
+javac %C_FILES%
+javah -d %GEN_PATH% com.ifancc.wifimgr.Manager com.ifancc.wifimgr.Bean.Wifi
 

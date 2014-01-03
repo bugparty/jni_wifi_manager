@@ -31,3 +31,4 @@
 #include "com_ifancc_wifimgr_Manager.h"
 
 #include "wifi_type_wrapper.h"
+#include "wlan_interface_state_wrapper.h"

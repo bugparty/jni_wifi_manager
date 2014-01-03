@@ -9,7 +9,7 @@
 
 class WifiEnumWrapper
 {
-	WifiEnumWrapper(){};
+	WifiEnumWrapper(JavaVM *vm, void *reserved);
 public:
 	// Field IDs:
 	static jfieldID  NONE_ID;
@@ -36,7 +36,8 @@ public:
 	static jstring toString(JNIEnv *env, jobject enumObj);
 	// Returns Enum Object by name
 	static jobject valueOf(JNIEnv *env, jstring enumName);
-
+	static jint init(JavaVM * vm, void * reserved);
+	static void destroy(JavaVM * vm, void * reserved);
 	virtual ~WifiEnumWrapper(){};
 
 };

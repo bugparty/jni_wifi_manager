@@ -30,6 +30,9 @@
     <ClInclude Include="wifi_type_wrapper.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="wlan_interface_state_wrapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +45,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="wifi_type_wrapper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wlan_interface_state_wrapper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

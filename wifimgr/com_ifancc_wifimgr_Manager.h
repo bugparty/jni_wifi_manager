@@ -18,10 +18,18 @@ JNIEXPORT jobjectArray JNICALL Java_com_ifancc_wifimgr_Manager_getWifiList
 /*
  * Class:     com_ifancc_wifimgr_Manager
  * Method:    getWlanInterface
- * Signature: ()[Lcom/ifancc/wifimgr/Bean/WlanInterface;
+ * Signature: ()[Lcom/ifancc/wifimgr/Bean/WlanInterfaceInfo;
  */
 JNIEXPORT jobjectArray JNICALL Java_com_ifancc_wifimgr_Manager_getWlanInterface
   (JNIEnv *, jobject);
+
+/*
+ * Class:     com_ifancc_wifimgr_Manager
+ * Method:    getWlanInterfaceState
+ * Signature: (I)Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;
+ */
+JNIEXPORT jobject JNICALL Java_com_ifancc_wifimgr_Manager_getWlanInterfaceState
+  (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
 }

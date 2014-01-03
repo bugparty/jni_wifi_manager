@@ -34,9 +34,7 @@ jobject WifiEnumWrapper::valueOf(JNIEnv *env, jstring enumName)
 {
 	return env->CallStaticObjectMethod(clazz, valueOf_ID, (jobject)enumName);
 }
-
-JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved)
-{
+jint WifiEnumWrapper::init(JavaVM *vm, void *reserved){
 	JNIEnv* env = NULL;
 
 	vm->AttachCurrentThread(reinterpret_cast<void**>(&env), NULL);
@@ -51,7 +49,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved)
 		WifiEnumWrapper::NONE_ID = env->GetStaticFieldID(WifiEnumWrapper::clazz, "NONE", "Lcom/ifancc/wifimgr/Bean/Wifi$WifiType;");
 		WifiEnumWrapper::WEP_ID = env->GetStaticFieldID(WifiEnumWrapper::clazz, "WEP", "Lcom/ifancc/wifimgr/Bean/Wifi$WifiType;");
 		WifiEnumWrapper::PSK_ID = env->GetStaticFieldID(WifiEnumWrapper::clazz, "PSK", "Lcom/ifancc/wifimgr/Bean/Wifi$WifiType;");
-	
+
 		WifiEnumWrapper::ordinal_ID = env->GetMethodID(WifiEnumWrapper::clazz, "ordinal", "()I");
 		WifiEnumWrapper::toString_ID = env->GetMethodID(WifiEnumWrapper::clazz, "toString", "()Ljava/lang/String;");
 		WifiEnumWrapper::valueOf_ID = env->GetStaticMethodID(WifiEnumWrapper::clazz, "valueOf", "(Ljava/lang/String;)Lcom/ifancc/wifimgr/Bean/Wifi$WifiType;");
@@ -59,9 +57,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved)
 	return JNI_VERSION_1_4;
 }
 
-
-JNIEXPORT void JNICALL JNI_OnUnload(JavaVM *vm, void *reserved)
-{
+void WifiEnumWrapper::destroy(JavaVM *vm, void *reserved){
 	JNIEnv* env = NULL;
 
 	vm->AttachCurrentThread(reinterpret_cast<void**>(&env), NULL);
