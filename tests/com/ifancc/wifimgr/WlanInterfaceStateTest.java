@@ -15,18 +15,33 @@
 
 package com.ifancc.wifimgr;
 
-import com.ifancc.wifimgr.Bean.Wifi;
-import com.ifancc.wifimgr.Bean.WlanInterfaceInfo;
 import com.ifancc.wifimgr.Bean.WlanInterfaceState;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.lang.reflect.Method;
 
 /**
- * Created by bowman on 14-1-2.
+ * @author bowman
+ * Created by bowman on 14-1-4.
  */
-public class Manager {
-    static {
-        System.loadLibrary("Debug/wifimgr");
+public class WlanInterfaceStateTest {
+    private WlanInterfaceState inst;
+    //Method getWlanInterfaceState;
+    @Before
+    public void setUp() throws Exception {
+        //getWlanInterfaceState = WlanInterfaceState.class.getMethod("getWlanInterfaceState",new Class[]{int.class});
+
     }
-    public native Wifi[] getWifiList();
+
+    @Test
+    public void testGetWlanInterfaceState() throws Exception {
+        WlanInterfaceState obj = WlanInterfaceState.getWlanInterfaceState(WlanInterfaceState.connected.ordinal());
+        System.out.println(obj);
+        assert(WlanInterfaceState.connected.ordinal() ==obj.ordinal());
+
+
+    }
 
 
 }

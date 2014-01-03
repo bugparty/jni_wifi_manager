@@ -26,9 +26,9 @@
 #include <stdio.h>
 
 
-
 // TODO:  在此处引用程序需要的其他头文件
 #include "com_ifancc_wifimgr_Manager.h"
+#include "com_ifancc_wifimgr_Bean_WlanInterfaceState.h"
 
 #include "wifi_type_wrapper.h"
 #include "wlan_interface_state_wrapper.h"

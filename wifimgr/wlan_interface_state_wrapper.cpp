@@ -62,12 +62,15 @@ jint wlan_interface_state_wrapper::init(JavaVM *vm, void * reserved){
 	vm->AttachCurrentThread(reinterpret_cast<void**>(&env), NULL);
 
 	jclass tmpclazz = reinterpret_cast<jclass> (env->FindClass("com/ifancc/wifimgr/Bean/WlanInterfaceState"));
+	assert(tmpclazz != NULL);
 	env->ExceptionClear();
 	if (tmpclazz != 0)
 	{
-		WifiEnumWrapper::clazz = reinterpret_cast<jclass> (env->NewGlobalRef(tmpclazz));
+		wlan_interface_state_wrapper::clazz = reinterpret_cast<jclass> (env->NewGlobalRef(tmpclazz));
+		assert(wlan_interface_state_wrapper::clazz != NULL);
 		env->DeleteLocalRef(tmpclazz);
 		wlan_interface_state_wrapper::wlan_interface_state_not_ready = env->GetStaticFieldID(wlan_interface_state_wrapper::clazz, "not_ready", "Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
+		assert(wlan_interface_state_wrapper::get_wlan_interface_state_not_ready != NULL);
 		wlan_interface_state_wrapper::wlan_interface_state_connected = env->GetStaticFieldID(wlan_interface_state_wrapper::clazz, "connected", "Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
 		wlan_interface_state_wrapper::wlan_interface_state_ad_hoc_network_formed = env->GetStaticFieldID(wlan_interface_state_wrapper::clazz, "ad_hoc_network_formed", "Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
 		wlan_interface_state_wrapper::wlan_interface_state_disconnecting = env->GetStaticFieldID(wlan_interface_state_wrapper::clazz, "disconnecting", "Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
@@ -77,9 +80,13 @@ jint wlan_interface_state_wrapper::init(JavaVM *vm, void * reserved){
 		wlan_interface_state_wrapper::wlan_interface_state_authenticating = env->GetStaticFieldID(wlan_interface_state_wrapper::clazz, "authenticating", "Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
 
 
-		wlan_interface_state_wrapper::ordinal_ID = env->GetMethodID(WifiEnumWrapper::clazz, "ordinal", "()I");
-		wlan_interface_state_wrapper::toString_ID = env->GetMethodID(WifiEnumWrapper::clazz, "toString", "()Ljava/lang/String;");
-		wlan_interface_state_wrapper::valueOf_ID = env->GetStaticMethodID(WifiEnumWrapper::clazz, "valueOf", "(Ljava/lang/String;Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
+		wlan_interface_state_wrapper::ordinal_ID = env->GetMethodID(wlan_interface_state_wrapper::clazz, "ordinal", "()I");
+		assert(wlan_interface_state_wrapper::ordinal_ID != NULL);
+		wlan_interface_state_wrapper::toString_ID = env->GetMethodID(wlan_interface_state_wrapper::clazz, "toString", "()Ljava/lang/String;");
+		assert(wlan_interface_state_wrapper::toString_ID != NULL);
+
+		wlan_interface_state_wrapper::valueOf_ID = env->GetStaticMethodID(wlan_interface_state_wrapper::clazz, "valueOf", "(Ljava/lang/String;)Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
+		assert(wlan_interface_state_wrapper::valueOf_ID != NULL);
 	}
 	return JNI_VERSION_1_4;
 }

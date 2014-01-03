@@ -38,7 +38,7 @@ jint WifiEnumWrapper::init(JavaVM *vm, void *reserved){
 	JNIEnv* env = NULL;
 
 	vm->AttachCurrentThread(reinterpret_cast<void**>(&env), NULL);
-	const char* clazzName = "com/ifancc/wifimgr/Bean/Wifi$WifiType";
+
 
 	jclass tmpclazz = reinterpret_cast<jclass> (env->FindClass("com/ifancc/wifimgr/Bean/Wifi$WifiType"));
 	env->ExceptionClear();

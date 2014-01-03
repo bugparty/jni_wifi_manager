@@ -13,6 +13,9 @@ public  enum WlanInterfaceState {
     associating(5),
     discovering(6),
     authenticating(7);
+    static {
+        System.loadLibrary("Debug/wifimgr");
+    }
     private int value;
     private WlanInterfaceState(int value){
         this.value =value;
@@ -21,8 +24,12 @@ public  enum WlanInterfaceState {
         System.out.println(not_ready.toString());
     }
 
+    public static native WlanInterfaceState getWlanInterfaceState(int num);
+
     @Override
     public String toString() {
-        return super.toString();
+        return "WlanInterfaceState:"+super.toString()+"{" +
+                "value=" + value +
+                '}';
     }
 }

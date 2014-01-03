@@ -19,14 +19,16 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved)
 {
 	jint ret;
-	ret = wlan_interface_state_wrapper::init(vm, reserved);
+	
 	ret = WifiEnumWrapper::init(vm, reserved);
+	ret = wlan_interface_state_wrapper::init(vm, reserved);
 	return ret;
 }
 
 
 JNIEXPORT void JNICALL JNI_OnUnload(JavaVM *vm, void *reserved)
 {
-	wlan_interface_state_wrapper::destroy(vm, reserved);
+	
 	WifiEnumWrapper::destroy(vm, reserved);
+	wlan_interface_state_wrapper::destroy(vm, reserved);
 }
