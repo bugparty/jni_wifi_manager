@@ -17,6 +17,8 @@ public:
 	static jfieldID GUIDID;
 	static jfieldID InterfaceInfoID;
 	static jfieldID StateID;
+	static jmethodID initID;
+	
 
 	static jint init(JavaVM * vm, void * reserved);
 	static void destroy(JavaVM * vm, void * reserved);

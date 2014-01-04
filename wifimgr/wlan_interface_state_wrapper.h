@@ -42,6 +42,9 @@ public:
 	static jobject get_wlan_interface_state_discovering(JNIEnv *env);
 	static jobject get_wlan_interface_state_authenticating(JNIEnv *env);
 
+	// get the wlan_interface_state enum object by the integer value
+	static jobject wlan_interface_state_wrapper::get_object_by_value(JNIEnv *env, int val);
+
 
 
 	// Returns the ordinal value of Enum Object

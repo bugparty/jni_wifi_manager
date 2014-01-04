@@ -16,8 +16,8 @@ GUID stringToGUID(const std::string& guid) {
 }
 
 GUID stringToGUID(const char* guidstr) {
-	GUID output, o = { 0 };
-	fprintf(stderr, "guid is %s\n", guidstr);
+	GUID output;
+	//fprintf(stderr, "guid is %s\n", guidstr);
 	/*
 	typedef struct _GUID {
 		unsigned long  Data1;
@@ -40,5 +40,17 @@ GUID stringToGUID(const char* guidstr) {
 		
 
 	
-	return o;
+	return output;
+}
+
+std::string guidToString(GUID guid) {
+	std::array<char, 40> output;
+	snprintf(output.data(), output.size(), "{%08X-%04hX-%04hX-%02X%02X-%02X%02X%02X%02X%02X%02X}", guid.Data1, guid.Data2, guid.Data3, guid.Data4[0], guid.Data4[1], guid.Data4[2], guid.Data4[3], guid.Data4[4], guid.Data4[5], guid.Data4[6], guid.Data4[7]);
+	return std::string(output.data());
+}
+char* guidToChars(GUID guid) {
+	char* output = new char(40);
+	
+	snprintf(output, 40, "{%08X-%04hX-%04hX-%02X%02X-%02X%02X%02X%02X%02X%02X}", guid.Data1, guid.Data2, guid.Data3, guid.Data4[0], guid.Data4[1], guid.Data4[2], guid.Data4[3], guid.Data4[4], guid.Data4[5], guid.Data4[6], guid.Data4[7]);
+	return output;
 }

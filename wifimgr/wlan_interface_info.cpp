@@ -28,7 +28,7 @@ jobject wlan_interface_info::getJavaObj(JNIEnv *env){
 	assert(wlan_interface_info::StateID != NULL);
 	return NULL;
 }
-
+jmethodID wlan_interface_info::initID = 0;
 jobject wlan_interface_info::getJavaObj(jclass cls,JNIEnv *env){
 	
 	wlan_interface_info::InterfaceInfoID = env->GetFieldID(cls,
@@ -43,7 +43,16 @@ jobject wlan_interface_info::getJavaObj(jclass cls,JNIEnv *env){
 		"State", "Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
 	assert(wlan_interface_info::StateID != NULL);
 
-	return NULL;
+	wlan_interface_info::initID = env->GetMethodID(cls, "<init>", "(Ljava/lang/String;Ljava/lang/String;Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;)V");
+	assert(wlan_interface_info::initID != NULL);
+	jstring interfaceInfo = env->NewString((const jchar*)(info->strInterfaceDescription),(jsize)sizeof(info->strInterfaceDescription));
+	jstring GUID = env->NewString((const jchar*)guidToChars(info->InterfaceGuid),40);
+	jobject state = wlan_interface_state_wrapper::get_object_by_value(env, info->isState);
+	jobject obj = env->NewObject(cls, initID, GUID, interfaceInfo, state );
+
+
+
+	return obj;
 }
 
 wlan_interface_info::~wlan_interface_info()
@@ -65,7 +74,8 @@ jint wlan_interface_info::init(JavaVM * vm, void * reserved){
 		assert(wlan_interface_info::clazz != NULL);
 		env->DeleteLocalRef(tmpclazz);
 
-		/*wlan_interface_info::InterfaceInfoID = env->GetFieldID(wlan_interface_info::clazz,
+		/*
+		wlan_interface_info::InterfaceInfoID = env->GetFieldID(wlan_interface_info::clazz,
 			"InterfaceInfo", "Ljava/lang/String;");
 		assert(wlan_interface_info::InterfaceInfoID != NULL);
 
@@ -75,7 +85,8 @@ jint wlan_interface_info::init(JavaVM * vm, void * reserved){
 
 		wlan_interface_info::StateID = env->GetFieldID(wlan_interface_info::clazz,
 			"State", "Lcom/ifancc/wifimgr/Bean/WlanInterfaceState;");
-		assert(wlan_interface_info::StateID != NULL);*/
+		assert(wlan_interface_info::StateID != NULL);
+		*/
 
 
 	}

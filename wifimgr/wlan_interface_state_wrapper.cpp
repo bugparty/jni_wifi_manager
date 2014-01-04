@@ -42,7 +42,39 @@
 	jobject wlan_interface_state_wrapper::get_wlan_interface_state_authenticating(JNIEnv *env){
 		return env->GetStaticObjectField(clazz, wlan_interface_state_authenticating);
 	}
-
+	jobject wlan_interface_state_wrapper::get_object_by_value(JNIEnv *env,int val){
+		jobject obj;
+		switch (val){
+		case WLAN_INTERFACE_STATE::wlan_interface_state_not_ready:
+			obj = wlan_interface_state_wrapper::get_wlan_interface_state_not_ready(env);
+			break;
+		case  WLAN_INTERFACE_STATE::wlan_interface_state_connected:
+			obj = wlan_interface_state_wrapper::get_wlan_interface_state_connected(env);
+			break;
+		case  WLAN_INTERFACE_STATE::wlan_interface_state_ad_hoc_network_formed:
+			obj = wlan_interface_state_wrapper::get_wlan_interface_state_ad_hoc_network_formed(env);
+			break;
+		case WLAN_INTERFACE_STATE::wlan_interface_state_disconnecting:
+			obj = wlan_interface_state_wrapper::get_wlan_interface_state_disconnecting(env);
+			break;
+		case WLAN_INTERFACE_STATE::wlan_interface_state_disconnected:
+			obj = wlan_interface_state_wrapper::get_wlan_interface_state_disconnected(env);
+			break;
+		case WLAN_INTERFACE_STATE::wlan_interface_state_associating:
+			obj = wlan_interface_state_wrapper::get_wlan_interface_state_associating(env);
+			break;
+		case WLAN_INTERFACE_STATE::wlan_interface_state_discovering:
+			obj = wlan_interface_state_wrapper::get_wlan_interface_state_discovering(env);
+			break;
+		case WLAN_INTERFACE_STATE::wlan_interface_state_authenticating:
+			obj = wlan_interface_state_wrapper::get_wlan_interface_state_authenticating(env);
+			break;
+		default:
+			obj = NULL;
+		}
+		assert(obj != NULL);
+		return obj;
+	}
 
 	jint wlan_interface_state_wrapper::ordinal(JNIEnv *env, jobject enumObj)
 	{

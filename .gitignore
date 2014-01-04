@@ -156,3 +156,11 @@ $RECYCLE.BIN/
 .DS_Store
 /.idea
 /out/production/jni
+/src/com/ifancc/wifimgr/Bean/Wifi$WifiType.class
+/src/com/ifancc/wifimgr/Bean/Wifi.class
+/src/com/ifancc/wifimgr/Bean/WlanInterface.class
+/src/com/ifancc/wifimgr/Bean/WlanInterfaceInfo.class
+/src/com/ifancc/wifimgr/Bean/WlanInterfaceState.class
+/out/test/jni/com/ifancc/wifimgr/WlanInterFaceInfoTest.class
+/out/test/jni/com/ifancc/wifimgr/WlanInterfaceStateTest.class
+/src/com/ifancc/wifimgr/Manager.class

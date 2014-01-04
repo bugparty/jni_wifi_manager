@@ -25,6 +25,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <string>
+#include <array>
 
 // TODO:  在此处引用程序需要的其他头文件
 #include "ulits.h"
