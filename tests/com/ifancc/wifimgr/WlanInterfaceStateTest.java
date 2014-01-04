@@ -19,14 +19,14 @@ import com.ifancc.wifimgr.Bean.WlanInterfaceState;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Method;
 
 /**
  * @author bowman
- * Created by bowman on 14-1-4.
+ *         Created by bowman on 14-1-4.
  */
 public class WlanInterfaceStateTest {
     private WlanInterfaceState inst;
+
     //Method getWlanInterfaceState;
     @Before
     public void setUp() throws Exception {
@@ -38,7 +38,7 @@ public class WlanInterfaceStateTest {
     public void testGetWlanInterfaceState() throws Exception {
         WlanInterfaceState obj = WlanInterfaceState.getWlanInterfaceState(WlanInterfaceState.connected.ordinal());
         System.out.println(obj);
-        assert(WlanInterfaceState.connected.ordinal() ==obj.ordinal());
+        assert (WlanInterfaceState.connected.ordinal() == obj.ordinal());
 
 
     }

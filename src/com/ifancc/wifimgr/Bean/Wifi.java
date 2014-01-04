@@ -1,6 +1,7 @@
 package com.ifancc.wifimgr.Bean;
 
 /**
+ * @author bowman
  * Created by bowman on 14-1-2.
  */
 public class Wifi {
@@ -20,11 +21,15 @@ public class Wifi {
         this.type = type;
     }
 
-    public static enum WifiType { NONE, PSK, WEP };
+    public static enum WifiType {NONE, PSK, WEP}
+
+    ;
     private String name;
     private WifiType type;
+
     public native Wifi[] getWifiNames();
-    public Wifi(String name, WifiType type){
+
+    public Wifi(String name, WifiType type) {
         this.name = name;
         this.type = type;
     }

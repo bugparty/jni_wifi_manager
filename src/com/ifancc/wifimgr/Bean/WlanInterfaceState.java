@@ -2,10 +2,10 @@ package com.ifancc.wifimgr.Bean;
 
 /**
  * @author bowman
- * Created by bowman on 14-1-3.
+ *         Created by bowman on 14-1-3.
  */
-public  enum WlanInterfaceState {
-    not_ready( 0),
+public enum WlanInterfaceState {
+    not_ready(0),
     connected(1),
     ad_hoc_network_formed(2),
     disconnecting(3),
@@ -13,14 +13,18 @@ public  enum WlanInterfaceState {
     associating(5),
     discovering(6),
     authenticating(7);
+
     static {
         System.loadLibrary("Debug/wifimgr");
     }
+
     private int value;
-    private WlanInterfaceState(int value){
-        this.value =value;
+
+    private WlanInterfaceState(int value) {
+        this.value = value;
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         System.out.println(not_ready.toString());
     }
 
@@ -28,7 +32,7 @@ public  enum WlanInterfaceState {
 
     @Override
     public String toString() {
-        return "WlanInterfaceState:"+super.toString()+"{" +
+        return "WlanInterfaceState:" + super.toString() + "{" +
                 "value=" + value +
                 '}';
     }

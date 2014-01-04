@@ -2,7 +2,7 @@ package com.ifancc.wifimgr.Bean;
 
 /**
  * @author bowman
- * Created by bowman on 14-1-3.
+ *         Created by bowman on 14-1-3.
  */
 public class WlanInterfaceInfoList {
     private int size;

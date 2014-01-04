@@ -21,12 +21,12 @@ import org.junit.Test;
 
 /**
  * @author bowman
- * Created by bowman on 14-1-4.
+ *         Created by bowman on 14-1-4.
  */
 public class WlanInterFaceInfoTest {
     @Test
     public void testGetWlanInterFaceInfo() throws Exception {
-        assert(WlanInterfaceInfo.getWlanInterfaceInfo()!= null);
+        assert (WlanInterfaceInfo.getWlanInterfaceInfo() != null);
 
     }
 
