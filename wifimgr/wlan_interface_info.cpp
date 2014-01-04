@@ -110,15 +110,13 @@ JNIEXPORT jobject JNICALL Java_com_ifancc_wifimgr_Bean_WlanInterfaceInfo_getWlan
 		InterfaceGUID[0] : {90903451 - 342D - 4A01 - BB90 - 13A762F4BE1C}
 	Interface Description[0] : Intel(R) Centrino(R) Advanced - N 6200 AGN
 		Interface State[0] : Connected*/
-	WLAN_INTERFACE_INFO *info = new WLAN_INTERFACE_INFO;
-	GUID g = stringToGUID("{90903451-342D-4A01-BB90-13A762F4BE1C}");
-	
-	info->InterfaceGuid = g;
-	
-	lstrcpy(info->strInterfaceDescription, L"Intel(R) Centrino(R) Advanced - N 6200 AGN");
+	WLAN_INTERFACE_INFO *info;
 
-	info->isState = wlan_interface_state_connected;
-		
+	wlan_interface_info_wrapper w = wlan_interface_info_wrapper("{90903451-342D-4A01-BB90-13A762F4BE1C}",
+		L"Intel(R) Centrino(R) Advanced - N 6200 AGN",
+		wlan_interface_state_connected);
+
+	info = w.getInfo();
 
 	wlan_interface_info obj = wlan_interface_info(info);
 	

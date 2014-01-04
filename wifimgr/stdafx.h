@@ -34,5 +34,6 @@
 
 #include "wifi_type_wrapper.h"
 #include "wlan_interface_state_wrapper.h"
+#include "wlan_interface_info_wraper.h"
 #include "wlan_interface_info.h"
 

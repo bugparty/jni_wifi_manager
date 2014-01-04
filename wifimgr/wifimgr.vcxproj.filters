@@ -45,6 +45,9 @@
     <ClInclude Include="ulits.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="wlan_interface_info_wraper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,6 +72,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ulits.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wlan_interface_info_wrapper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
