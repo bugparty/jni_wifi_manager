@@ -39,13 +39,13 @@
     <ClInclude Include="wlan_interface_info.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="com_ifancc_wifimgr_Bean_WlanInterfaceInfo.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ulits.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="wlan_interface_info_wraper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="com_ifancc_wifimgr_WlanInterfaceInfoTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

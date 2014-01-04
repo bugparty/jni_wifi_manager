@@ -20,16 +20,9 @@ private:
 	jstring interfaceInfo;
 	jobject state;
 
-	
 
 
 };
-
-
-
-
-
-
 
 
 #endif

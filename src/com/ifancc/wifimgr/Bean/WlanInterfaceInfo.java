@@ -10,9 +10,7 @@ public class WlanInterfaceInfo {
     public String InterfaceInfo;
     public WlanInterfaceState State;
 
-    static {
-        System.loadLibrary("Debug/wifimgr");
-    }
+
 
     public WlanInterfaceInfo(String GUID, String interfaceInfo, WlanInterfaceState state) {
         this.GUID = GUID;
@@ -20,5 +18,13 @@ public class WlanInterfaceInfo {
         this.State = state;
     }
 
-    public native static WlanInterfaceInfo getWlanInterfaceInfo();
+
+    @Override
+    public String toString() {
+        return "WlanInterfaceInfo{" +
+                "GUID='" + GUID + '\'' +
+                ", InterfaceInfo='" + InterfaceInfo + '\'' +
+                ", State=" + State +
+                '}';
+    }
 }

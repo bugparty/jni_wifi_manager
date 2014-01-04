@@ -5,6 +5,8 @@ set BEAN=%BASE_PATH%/Bean
 set CBEAN=com.ifancc.wifimgr.Bean
 set C_FILES= %BASE_PATH%/Manager.java %BEAN%/Wifi.java %BEAN%/WlanInterfaceInfo.java
 set H_FILES= %CBEAN%.WlanInterfaceState %CBEAN%.Wifi %CBEAN%.WlanInterfaceInfo
+
+
 @echo on
 
 

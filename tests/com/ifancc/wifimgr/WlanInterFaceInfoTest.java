@@ -23,10 +23,17 @@ import org.junit.Test;
  * @author bowman
  *         Created by bowman on 14-1-4.
  */
-public class WlanInterFaceInfoTest {
+public class WlanInterfaceInfoTest {
+    static {
+        System.loadLibrary("Debug/wifimgr");
+    }
+    public native static WlanInterfaceInfo getWlanInterfaceInfo();
     @Test
-    public void testGetWlanInterFaceInfo() throws Exception {
-        assert (WlanInterfaceInfo.getWlanInterfaceInfo() != null);
+    public void testGetWlanInterfaceInfo() throws Exception {
+        WlanInterfaceInfo info = WlanInterfaceInfoTest.getWlanInterfaceInfo();
+
+        assert ( info!= null);
+        System.out.println(info);
 
     }
 

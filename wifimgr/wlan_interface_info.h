@@ -11,7 +11,6 @@ class wlan_interface_info
 public:
 	wlan_interface_info(WLAN_INTERFACE_INFO* info);
 	jobject getJavaObj(JNIEnv *env);
-	jobject getJavaObj(jclass cls, JNIEnv *env);
 	static jclass clazz;
 
 	static jfieldID GUIDID;
