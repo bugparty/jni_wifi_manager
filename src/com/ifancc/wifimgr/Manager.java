@@ -26,8 +26,6 @@ public class Manager {
     static {
         System.loadLibrary("Debug/wifimgr");
     }
-
-    public native Wifi[] getWifiList();
     public native WlanInterfaceInfoList  WlanEnumInterfaces();
 
 
