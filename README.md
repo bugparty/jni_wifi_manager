@@ -5,4 +5,4 @@ A Jni library intent to make it easier to manage the wlan interface in windows u
 TODO:
 
 1.  ~~get WlanInterface jni dll works~~
-2.  get WlanInterfaceEnum works
+2.  ~~get WlanInterfaceEnum works~~

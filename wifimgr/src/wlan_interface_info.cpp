@@ -120,7 +120,7 @@ JNIEXPORT jobject JNICALL Java_com_ifancc_wifimgr_WlanInterfaceInfoTest_getWlanI
 	assert(info != NULL);
 	wlan_interface_info obj = wlan_interface_info(info);
 	
-	jobject ret = obj.getJavaObj(env);;
+	jobject ret = obj.getJavaObj(env);
 	assert(ret != NULL);
 	return ret;
 }

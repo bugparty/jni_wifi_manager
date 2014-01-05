@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Java\jdk1.7.0_15\include\win32;C:\Program Files %28x86%29\Java\jdk1.7.0_15\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files (x86)\Java\jdk1.7.0_15\include\win32;C:\Program Files %28x86%29\Java\jdk1.7.0_15\include;./include;$(IncludePath)</IncludePath>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -49,11 +49,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;WIFIMGR_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <EnablePREfast>false</EnablePREfast>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -80,37 +81,34 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="com_ifancc_wifimgr_Bean_WlanInterfaceState.h" />
-    <ClInclude Include="com_ifancc_wifimgr_Manager.h" />
-    <ClInclude Include="com_ifancc_wifimgr_WlanInterfaceInfoTest.h" />
-    <ClInclude Include="wlan_interface_info_wraper.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="ulits.h" />
-    <ClInclude Include="wifi_type_wrapper.h" />
-    <ClInclude Include="wlan_interface_info.h" />
-    <ClInclude Include="wlan_interface_state_wrapper.h" />
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_Wifi.h" />
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_Wifi_WifiType.h" />
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_WlanInterfaceInfo.h" />
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_WlanInterfaceInfoList.h" />
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_WlanInterfaceState.h" />
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Manager.h" />
+    <ClInclude Include="include\java\com_ifancc_wifimgr_WlanInterfaceInfoListTest.h" />
+    <ClInclude Include="include\java\com_ifancc_wifimgr_WlanInterfaceInfoTest.h" />
+    <ClInclude Include="include\stdafx.h" />
+    <ClInclude Include="include\targetver.h" />
+    <ClInclude Include="include\ulits.h" />
+    <ClInclude Include="include\wifi_type_wrapper.h" />
+    <ClInclude Include="include\wlan_interface_info.h" />
+    <ClInclude Include="include\wlan_interface_info_list.h" />
+    <ClInclude Include="include\wlan_interface_info_wraper.h" />
+    <ClInclude Include="include\wlan_interface_state_wrapper.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp">
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="ulits.cpp" />
-    <ClCompile Include="wifimgr.cpp" />
-    <ClCompile Include="wifi_type_wrapper.cpp" />
-    <ClCompile Include="wlan_interface_info.cpp" />
-    <ClCompile Include="wlan_interface_info_wrapper.cpp" />
-    <ClCompile Include="wlan_interface_state.cpp" />
-    <ClCompile Include="wlan_interface_state_wrapper.cpp" />
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\ulits.cpp" />
+    <ClCompile Include="src\wifimgr.cpp" />
+    <ClCompile Include="src\wifi_type_wrapper.cpp" />
+    <ClCompile Include="src\wlan_interface_info.cpp" />
+    <ClCompile Include="src\wlan_interface_info_list.cpp" />
+    <ClCompile Include="src\wlan_interface_info_wrapper.cpp" />
+    <ClCompile Include="src\wlan_interface_state.cpp" />
+    <ClCompile Include="src\wlan_interface_state_wrapper.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

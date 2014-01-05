@@ -15,21 +15,24 @@
 
 package com.ifancc.wifimgr;
 
-import com.ifancc.wifimgr.Bean.Wifi;
 import com.ifancc.wifimgr.Bean.WlanInterfaceInfoList;
+import org.junit.Test;
 
 /**
  * @author bowman
- * Created by bowman on 14-1-2.
+ * Created by bowman on 14-1-4.
  */
-public class Manager {
+public class WlanInterfaceInfoListTest {
     static {
         System.loadLibrary("Debug/wifimgr");
     }
+    public native static WlanInterfaceInfoList getWlanInterfaceInfoList();
+    @Test
+    public void testGetWlanInterfaceList() throws Exception {
+        WlanInterfaceInfoList  list;
+        list = WlanInterfaceInfoListTest.getWlanInterfaceInfoList();
+        assert(list != null);
+        System.out.println(list);
 
-    public native Wifi[] getWifiList();
-    public native WlanInterfaceInfoList  WlanEnumInterfaces();
-
-
-
+    }
 }

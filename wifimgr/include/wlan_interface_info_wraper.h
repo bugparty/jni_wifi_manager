@@ -8,7 +8,7 @@
 
 class wlan_interface_info_wrapper{
 public:
-	wlan_interface_info_wrapper(GUID guid,const char* interfaceInfo,WLAN_INTERFACE_STATE state);
+	wlan_interface_info_wrapper(GUID guid,const WCHAR* interfaceInfo,WLAN_INTERFACE_STATE state);
 	
 	wlan_interface_info_wrapper(const char* guidStr, const WCHAR* interfaceInfo, WLAN_INTERFACE_STATE state);
 

@@ -1,5 +1,7 @@
 package com.ifancc.wifimgr.Bean;
 
+import java.util.Arrays;
+
 /**
  * @author bowman
  *         Created by bowman on 14-1-3.
@@ -36,5 +38,14 @@ public class WlanInterfaceInfoList {
 
     public int getSize() {
         return size;
+    }
+
+    @Override
+    public String toString() {
+        return "WlanInterfaceInfoList{" +
+                "size=" + size +
+                ", index=" + index +
+                ", interfaces=" + Arrays.toString(interfaces) +
+                '}';
     }
 }

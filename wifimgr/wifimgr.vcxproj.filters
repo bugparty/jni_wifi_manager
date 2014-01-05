@@ -13,68 +13,92 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\java">
+      <UniqueIdentifier>{9872ea15-9f73-430e-86b8-38955593d6fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_Wifi.h">
+      <Filter>头文件\java</Filter>
+    </ClInclude>
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_Wifi_WifiType.h">
+      <Filter>头文件\java</Filter>
+    </ClInclude>
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_WlanInterfaceInfo.h">
+      <Filter>头文件\java</Filter>
+    </ClInclude>
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_WlanInterfaceInfoList.h">
+      <Filter>头文件\java</Filter>
+    </ClInclude>
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Bean_WlanInterfaceState.h">
+      <Filter>头文件\java</Filter>
+    </ClInclude>
+    <ClInclude Include="include\java\com_ifancc_wifimgr_Manager.h">
+      <Filter>头文件\java</Filter>
+    </ClInclude>
+    <ClInclude Include="include\java\com_ifancc_wifimgr_WlanInterfaceInfoTest.h">
+      <Filter>头文件\java</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ulits.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="include\wifi_type_wrapper.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="com_ifancc_wifimgr_Manager.h">
+    <ClInclude Include="include\wlan_interface_info.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="wifi_type_wrapper.h">
+    <ClInclude Include="include\wlan_interface_info_list.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="wlan_interface_state_wrapper.h">
+    <ClInclude Include="include\wlan_interface_info_wraper.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="com_ifancc_wifimgr_Bean_WlanInterfaceState.h">
+    <ClInclude Include="include\wlan_interface_state_wrapper.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="wlan_interface_info.h">
+    <ClInclude Include="include\stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ulits.h">
+    <ClInclude Include="include\targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="wlan_interface_info_wraper.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="com_ifancc_wifimgr_WlanInterfaceInfoTest.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="include\java\com_ifancc_wifimgr_WlanInterfaceInfoListTest.h">
+      <Filter>头文件\java</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="src\dllmain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="wifimgr.cpp">
+    <ClCompile Include="src\stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="src\ulits.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="wifi_type_wrapper.cpp">
+    <ClCompile Include="src\wifi_type_wrapper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="wlan_interface_state_wrapper.cpp">
+    <ClCompile Include="src\wifimgr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="wlan_interface_state.cpp">
+    <ClCompile Include="src\wlan_interface_info.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="wlan_interface_info.cpp">
+    <ClCompile Include="src\wlan_interface_info_list.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ulits.cpp">
+    <ClCompile Include="src\wlan_interface_info_wrapper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="wlan_interface_info_wrapper.cpp">
+    <ClCompile Include="src\wlan_interface_state.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wlan_interface_state_wrapper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
