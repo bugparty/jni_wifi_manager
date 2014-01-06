@@ -48,13 +48,6 @@ jint wlan_interface_info_list::init(JavaVM * vm, void * reserved){
 
 
 
-		//wifi = env->FindClass("com/ifancc/wifimgr/Bean/Wifi");
-		//wifi_type = env->FindClass("Lcom/ifancc/wifimgr/Bean/Wifi$WifiType;");
-		//jarray = env->NewObjectArray((jsize)3, wifi, NULL);
-		
-
-
-
 	}
 
 	return JNI_VERSION_1_4;

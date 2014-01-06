@@ -26,6 +26,7 @@ public:
 	virtual ~wlan_interface_info();
 private:
 	WLAN_INTERFACE_INFO *info;
+	char* pstrGUID;
 
 };
 

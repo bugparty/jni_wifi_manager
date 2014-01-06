@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "wlan_interface_info.h"
-
+using namespace std;
 //static vars initialize
 jclass wlan_interface_info::clazz = 0;
 
@@ -20,8 +20,14 @@ typedef struct _WLAN_INTERFACE_INFO {
 */
 wlan_interface_info::wlan_interface_info(WLAN_INTERFACE_INFO *info)
 {
+	pstrGUID = new char[100];
 	this->info = info;
 
+}
+wlan_interface_info::~wlan_interface_info()
+{
+	//delete[]pstrGUID;
+	//pstrGUID = NULL;
 }
 
 jobject wlan_interface_info::getJavaObj(JNIEnv *env){
@@ -35,9 +41,16 @@ typedef struct _WLAN_INTERFACE_INFO {
 	*/
 	
 	jstring interfaceInfo = env->NewString((const jchar*)(info->strInterfaceDescription),(jsize)lstrlen(info->strInterfaceDescription));
+	if (guidToChars(info->InterfaceGuid, pstrGUID, 100) == NULL){
+		fprintf(stderr, "error in guidToChars");
+		printInfo();
+	}
+	
+	//pstrGUID = guidToChars(info->InterfaceGuid);
 
-	jstring GUID = env->NewStringUTF(guidToChars(info->InterfaceGuid));
-
+	//fix: memery leak or other things occors, stack obj was coupted or so on
+	jstring GUID = env->NewStringUTF(pstrGUID);
+	
 	jobject state = wlan_interface_state_wrapper::get_object_by_value(env, info->isState);
 
 	jobject obj = env->NewObject(wlan_interface_info::clazz, initID, GUID, interfaceInfo, state );
@@ -47,9 +60,6 @@ typedef struct _WLAN_INTERFACE_INFO {
 	return obj;
 }
 
-wlan_interface_info::~wlan_interface_info()
-{
-}
 
 
 jint wlan_interface_info::init(JavaVM * vm, void * reserved){
